@@ -1,0 +1,49 @@
+{
+  "name": "express-header-authorize",
+  "version": "1.0.0",
+  "description": "This module provides the express header authorize with basic auth and OIDC accesstoken.",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "build": "npm run lint && babel ./src --out-dir ./lib",
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "express",
+    "authorize",
+    "basic auth",
+    "accesstoken"
+  ],
+  "author": "Yanliang Gu",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.3"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.4.5",
+    "passport": "^0.4.0",
+    "passport-ldapauth": "^2.1.3",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ygu1/express-header-authorize.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ygu1/express-header-authorize/issues"
+  },
+  "homepage": "https://github.com/ygu1/express-header-authorize#readme"
+}

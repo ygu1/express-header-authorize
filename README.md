@@ -9,7 +9,7 @@ This module provides the express header authorize with basic auth and OIDC acces
 
 ### Example
 ```
-import Authorize from 'xpress-header-authorize';
+import Authorize from 'express-header-authorize';
 
 const authorize = new Authorize({
   accesstokenConfig: {

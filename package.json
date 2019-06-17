@@ -1,6 +1,6 @@
 {
   "name": "express-header-authorize",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "This module provides the express header authorize with basic auth and OIDC accesstoken.",
   "main": "lib/index.js",
   "scripts": {

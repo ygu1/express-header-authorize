@@ -82,4 +82,25 @@ export default class Authorize {
       throw e;
     }
   }
+
+  async authorizeWithHeader(header) {
+    try {
+      if (!header) throw new Error('Please provide non empty header!');
+      let response = {};
+      if (header.accesstoken) {
+        response = await this.authorizeWithAccesstoken(header.accesstoken);
+      } else if (header.accessToken) {
+        response = await this.authorizeWithAccesstoken(header.accessToken);
+      } else if (header.access_token) {
+        response = await this.authorizeWithAccesstoken(header.access_token);
+      } else if (header.authorization) {
+        response = await this.authorizeWithBasicAuth(header.authorization);
+      } else {
+        throw new Error('Please provide an header contains accesstoken or basic auth!');
+      }
+      return response;
+    } catch (e) {
+      throw e;
+    }
+  }
 }

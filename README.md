@@ -43,4 +43,14 @@ authorize.authorizeWithAccesstoken('XXXXXXXXXX')
     // user authorize failed
   }
 });
+
+// authorize with header
+authorize.authorizeWithHeader(header)
+.then((user) => {
+  if(user.active) {
+    // user authorize passed
+  } else {
+    // user authorize failed
+  }
+});
 ```

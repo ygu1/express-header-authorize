@@ -94,7 +94,12 @@ export default class Authorize {
       } else if (header.access_token) {
         response = await this.authorizeWithAccesstoken(header.access_token);
       } else if (header.authorization) {
-        response = await this.authorizeWithBasicAuth(header.authorization);
+        if (header.authorization.indexOf('Bearer') === 0) {
+          const accesstoken = header.authorization.split(' ')[1];
+          response = await this.authorizeWithAccesstoken(accesstoken);
+        } else {
+          response = await this.authorizeWithBasicAuth(header.authorization);
+        }
       } else {
         throw new Error('Please provide an header contains accesstoken or basic auth!');
       }
